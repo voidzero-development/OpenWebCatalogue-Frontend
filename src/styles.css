@@ -35,12 +35,12 @@ html, body {
 
 .container {
     margin: 0 auto;
-    max-width: 60%;
-    width: 60%;
+    max-width: 70%;
+    width: 75%;
 }
 
 .announcement {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .announcement > h1 {
@@ -64,11 +64,11 @@ mat-card {
 }
 
 mat-toolbar {
-    background: #002f4b !important;
+    background: #004166 !important;
 }
 
 .mat-flat-button {
-    background: #002f4b !important;
+    background: #004166 !important;
 }
 
 .warning-btn {
