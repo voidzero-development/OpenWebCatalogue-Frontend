@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class PublisherService {
 
-  private publisherUrl = 'http://node-cside-jh.herokuapp.com/api/publishers';  // web api url
+  private publisherUrl = 'https://node-cside-jh.herokuapp.com/api/publishers';  // web api url
 
   constructor(
     private http: HttpClient) { }

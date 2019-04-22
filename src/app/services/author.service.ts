@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthorService {
 
-  private authorUrl = 'http://node-cside-jh.herokuapp.com/api/authors';  // URL to web api
+  private authorUrl = 'https://node-cside-jh.herokuapp.com/api/authors';  // URL to web api
 
   constructor(
     private http: HttpClient) { }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BookService {
 
-  private bookUrl = 'http://node-cside-jh.herokuapp.com/api/books';  // URL to web api
+  private bookUrl = 'https://node-cside-jh.herokuapp.com/api/books';  // URL to web api
 
   constructor(
     private http: HttpClient) { }

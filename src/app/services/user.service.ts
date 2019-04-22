@@ -9,7 +9,7 @@ import { User } from '../models/User';
 })
 export class UserService {
 
-  private userUrl = 'http://node-cside-jh.herokuapp.com/api/users';
+  private userUrl = 'https://node-cside-jh.herokuapp.com/api/users';
 
   constructor(
     private http: HttpClient) {

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class LoginService {
 
-  private loginUrl = 'http://node-cside-jh.herokuapp.com/api/login';  // URL to web api
+  private loginUrl = 'https://node-cside-jh.herokuapp.com/api/login';  // URL to web api
   private loggedIn = new BehaviorSubject<boolean>(false);
 
   get isLoggedIn() {
