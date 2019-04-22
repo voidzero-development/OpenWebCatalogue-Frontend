@@ -1,0 +1,50 @@
+<app-header></app-header>
+<h1>Publishers:</h1>
+<p *ngIf="errorMessage" class="errMsg">{{errorMessage}}</p>
+<p *ngIf="successMessage" class="successMsg">{{successMessage}}</p>
+<table mat-table [dataSource]="list" matSort class="mat-elevation-z1">
+
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Country of origin </th>
+        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+    </ng-container>
+    <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> city of origin </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact E-mail </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact Phone-nr </th>
+    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+ </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> <a mat-flat-button (click)="deletePublisher(element._id)" class="warning-btn">Delete</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef>  <a mat-flat-button routerLink="/publishercreate" class="success-btn">Create</a></th>
+        <td mat-cell *matCellDef="let element"> <a mat-flat-button routerLink="/publisheredit/{{element._id}}"color="primary">Edit</a></td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

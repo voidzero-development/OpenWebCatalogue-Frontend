@@ -1,0 +1,51 @@
+<app-header></app-header>
+<mat-card>
+  <h2>Create a new publisher</h2>
+  <p *ngIf="errorMessage" class="errMsg">{{errorMessage}}</p>
+  <p *ngIf="successMessage" class="successMsg">{{successMessage}}</p>
+  <mat-form-field>
+    <input [formControl]="nameFormControl" matInput name="name" [(ngModel)]="name" placeholder="name" required>
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input [formControl]="countryFormControl" matInput name="country" [(ngModel)]="country" placeholder="country" required>
+    <mat-error *ngIf="countryFormControl.hasError('required')">
+      country is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="cityFormControl" matInput name="city" [(ngModel)]="city" placeholder="city" required>
+    <mat-error *ngIf="cityFormControl.hasError('required')">
+      city is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="addressFormControl" matInput name="address" [(ngModel)]="address" placeholder="address" required>
+    <mat-error *ngIf="addressFormControl.hasError('required')">
+      address is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="emailFormControl" matInput name="email" [(ngModel)]="email" placeholder="email" required>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      email is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="phoneFormControl" matInput name="phone" [(ngModel)]="phone" placeholder="phone" required>
+    <mat-error *ngIf="phoneFormControl.hasError('required')">
+      phone is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  
+
+
+  <button mat-flat-button (click)="createPublisher()" color="primary">Create Publisher</button>
+</mat-card>

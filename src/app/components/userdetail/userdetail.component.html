@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<h1>Account Details</h1>
+<mat-card>
+  <p *ngIf="errorMessage" class="errMsg">{{errorMessage}}</p>
+  <p *ngIf="successMessage" class="successMsg">{{successMessage}}</p>
+  <mat-form-field>
+    <input matInput name="username" [(ngModel)]="username" placeholder="Username" value="{{user.username}}" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="name" [(ngModel)]="name" placeholder="name" value="{{user.name}}" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="country" [(ngModel)]="country" placeholder="Country" value="{{user.country}}" required>
+  </mat-form-field>
+  <button mat-flat-button (click)="changeDetails()" color="primary">Change details</button>
+</mat-card>
+
+<mat-card>
+  <h2>Change password</h2>
+  <h2>Make sure to use keypassX or write it down!</h2>
+  <mat-form-field>
+    <input matInput name="password" [(ngModel)]="password" placeholder="Current Password" type="password"  required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="newPassword" [(ngModel)]="newPassword" placeholder="New Password" type="password" required>
+  </mat-form-field>
+  <button mat-flat-button (click)="changePassword()" color="primary">Change password</button>
+</mat-card>

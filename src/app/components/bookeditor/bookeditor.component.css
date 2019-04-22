@@ -1,0 +1,23 @@
+mat-card {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+  }
+  
+  mat-card > * {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  mat-grid-tile {
+    width: calc(50% - 25px) !important;
+  }
+
+  mat-grid-tile:nth-child(2) {
+    left: calc(50% + 25px) !important;
+  }
+
+  mat-grid-tile > * {
+    width: 100%;
+  }

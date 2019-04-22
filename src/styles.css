@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right,#ceedff,#008cff, transparent), url('https://upload.wikimedia.org/wikipedia/commons/c/c5/13-11-02-olb-by-RalfR-03.jpg') center center no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.errMsg {
+    background: #E53935;
+    width: 100%;
+    padding: 12px;
+    color: #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.successMsg {
+    background: #43A047;
+    width: 100%;
+    padding: 12px;
+    color: #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 60%;
+    width: 60%;
+}
+
+.announcement {
+    margin-bottom: 50px;
+}
+
+.announcement > h1 {
+    font-weight: 700;
+}
+
+.announcement > h1 > a{
+    color: rgba(0,0,0,.87);
+    text-decoration: none;
+}
+
+.announcement > img {
+    max-height: 540px;
+    height: 540px;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+mat-card {
+    margin-bottom: 50px;
+}
+
+mat-toolbar {
+    background: #002f4b !important;
+}
+
+.mat-flat-button {
+    background: #002f4b !important;
+}
+
+.warning-btn {
+    background: #E53935 !important;
+    color: #EEEEEE;
+}
+
+.success-btn {
+    background: #43A047 !important;
+    color: #EEEEEE;
+}

@@ -1,0 +1,77 @@
+<app-header></app-header>
+<mat-card>
+  <h2>Create a book</h2>
+  <p *ngIf="errorMessage" class="errMsg">{{errorMessage}}</p>
+  <p *ngIf="successMessage" class="successMsg">{{successMessage}}</p>
+
+
+  <mat-form-field>
+    <mat-select  [formControl]="authorFormControl" placeholder="Pick an author" name="author" [(value)]="author" [(ngModel)]="author" required> 
+      <mat-option *ngFor="let aut of authorList" value="{{aut._id}}">{{aut.name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="authorFormControl.hasError('required')">
+        author is <strong>required</strong>
+      </mat-error>
+  </mat-form-field> 
+
+  <mat-form-field>
+    <mat-select  [formControl]="publisherFormControl" placeholder="Pick an publisher" name="publisher" [(value)]="publisher" [(ngModel)]="publisher" required> 
+      <mat-option *ngFor="let pub of publisherList" value="{{pub._id}}">{{pub.name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="publisherFormControl.hasError('required')">
+        publisher is <strong>required</strong>
+      </mat-error>
+  </mat-form-field> 
+
+  <mat-form-field>
+    <input [formControl]="nameFormControl" matInput name="name" [(ngModel)]="name" placeholder="name" required>
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+      name is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="descriptionFormControl" matInput name="description" [(ngModel)]="description" placeholder="description" required>
+    <mat-error *ngIf="descriptionFormControl.hasError('required')">
+      description is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="genreFormControl" matInput name="genre" [(ngModel)]="genre" placeholder="genre" required>
+    <mat-error *ngIf="genreFormControl.hasError('required')">
+      genre is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="languageFormControl" matInput name="language" [(ngModel)]="language" placeholder="language" required>
+    <mat-error *ngIf="languageFormControl.hasError('required')">
+      language is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="publishdateFormControl" matInput name="publishdate" [(ngModel)]="publishdate" placeholder="publishdate" required>
+    <mat-error *ngIf="publishdateFormControl.hasError('required')">
+      publishdate is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+
+
+
+  <mat-form-field>
+    <input [formControl]="imageFormControl" matInput name="imgage" [(ngModel)]="image" placeholder="Image Uri" required>
+    <mat-error *ngIf="imageFormControl.hasError('pattern') && !imageFormControl.hasError('required')">
+        Please enter a valid Image URI (example: 'http://example.com/i/img.png').
+      </mat-error>
+      <mat-error *ngIf="imageFormControl.hasError('required')">
+        Image URI is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+
+
+  <button mat-flat-button (click)="createBook()" color="primary">Create Book</button>
+</mat-card>

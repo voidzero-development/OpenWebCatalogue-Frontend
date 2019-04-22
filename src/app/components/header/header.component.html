@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/home">Home</button>
+  <button mat-button routerLink="/collection">Collection</button>
+  <button mat-button routerLink="/authorlist">Authors</button>
+  <button mat-button [matMenuTriggerFor]="loginOptions" *ngIf="!(isLoggedIn$ | async)" >Login</button>
+
+
+
+  <!-- guard.-->
+
+
+  <button mat-button [matMenuTriggerFor]="accountOptions" *ngIf="isLoggedIn$ | async" >My Account</button>
+  <button mat-button [matMenuTriggerFor]="adminOptions" *ngIf="(isLoggedIn$ | async)" >Advanced view</button>
+  <button mat-button (click)="onLogout()" *ngIf="isLoggedIn$ | async"> Logout</button>
+
+  <mat-menu #loginOptions="matMenu">
+    <button mat-menu-item routerLink="/login">Login</button>
+    <button mat-menu-item routerLink="/register">Register</button>
+  </mat-menu>
+
+  <mat-menu #accountOptions="matMenu">
+    <button mat-menu-item routerLink="/userdetails">My Account</button>
+  </mat-menu>
+
+  <mat-menu #adminOptions="matMenu">
+    <button mat-menu-item routerLink="/bookschema">Books</button>
+    <button mat-menu-item routerLink="/authorschema">Authors</button>
+    <button mat-menu-item routerLink="/publisherschema">Publishers</button>
+  </mat-menu>
+</mat-toolbar>

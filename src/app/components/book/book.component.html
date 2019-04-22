@@ -1,0 +1,20 @@
+<app-header></app-header>
+<mat-card class="announcement">
+  <img src="{{book.img}}" mat-card-image>
+  <h1 class="mat-headline">{{book.name | uppercase }}</h1>
+</mat-card>
+<mat-card>
+    <h3>Details:</h3>
+    <p>{{book.description}}</p>
+    <br>
+    <p>Publisher: {{book.publisher.name}}</p>
+    <p>Genre: {{book.genre}}</p>
+    <p>Release date: {{book.publishdate}}</p>
+    <p>Language: {{book.language}}</p>
+
+    <br>
+
+    <p>Author: {{book.author.name}}</p>
+    <a mat-flat-button routerLink="/author/{{ book.author._id }}" class="success-btn">Author Details</a>
+
+</mat-card>

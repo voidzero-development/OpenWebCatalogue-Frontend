@@ -1,0 +1,38 @@
+<app-header></app-header>
+<h1>REGISTER AN ACCOUNT</h1>
+<mat-card>
+  <p *ngIf="errorMessage" class="errMsg">{{errorMessage}}</p>
+  <p *ngIf="successMessage" class="successMsg">{{successMessage}}</p>
+  <mat-form-field>
+    <input [formControl]="usernameFormControl" matInput name="username" [(ngModel)]="username" placeholder="Username" required>
+    <mat-error *ngIf="usernameFormControl.hasError('required')">
+        Username is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControl]="passwordFormControl" name="password" [(ngModel)]="password" placeholder="Password" type="password" required>
+    <mat-error *ngIf="passwordFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControl]="passwordRepeatFormControl" name="passwordRepeat" [(ngModel)]="passwordRepeat" placeholder="Password (repeat)" type="password" required>
+    <mat-error *ngIf="passwordRepeatFormControl.hasError('required')">
+        Password Repeat is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControl]="nameFormControl" name="name" [(ngModel)]="name" placeholder=" name" required>
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+         name is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [formControl]="countryFormControl" name="country" [(ngModel)]="country" placeholder="Country" required>
+    <mat-error *ngIf="countryFormControl.hasError('required')">
+        Country is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+  <button mat-flat-button (click)="register()" color="primary">Register</button>
+</mat-card>

@@ -1,0 +1,55 @@
+<app-header></app-header>
+<mat-card>
+  <h2>{{name}}</h2>
+  <p *ngIf="errorMessage" class="errMsg">{{errorMessage}}</p>
+  <p *ngIf="successMessage" class="successMsg">{{successMessage}}</p>
+  <mat-form-field>
+    <input [formControl]="nameFormControl" matInput name="name" [(ngModel)]="name" value="{{name}}" required>
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [formControl]="countryFormControl" name="country" [(ngModel)]="country" value="{{country}}" required>
+    <mat-error *ngIf="countryFormControl.hasError('required')">
+        Genre is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput [formControl]="cityFormControl" name="city" [(ngModel)]="city" value="{{city}}" required>
+    <mat-error *ngIf="cityFormControl.hasError('required')">
+        City is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [formControl]="addressFormControl" name="address" [(ngModel)]="address" value="{{address}}" required>
+    <mat-error *ngIf="addressFormControl.hasError('required')">
+      address is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [formControl]="emailFormControl" name="email" [(ngModel)]="email" value="{{email}}" required>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      email is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [formControl]="phoneFormControl" name="phone" [(ngModel)]="phone" value="{{phone}}" required>
+    <mat-error *ngIf="phoneFormControl.hasError('required')">
+      phone is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+
+  
+
+  
+  <button mat-flat-button (click)="editPublisher()" color="primary">Edit Publisher</button>
+</mat-card>
+

@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+
+<div *ngIf="dbook">
+    <h1>Book of the week</h1>
+    <mat-card class="announcement">
+        <img src="{{dbook.img}}"  mat-card-image>
+        <h1 class="mat-headline"><a routerLink="/book/{{ dbook._id }}">{{dbook.name | uppercase }} | {{dbook.genre | uppercase }} |  {{dbook.author.name | uppercase }} </a></h1>
+    </mat-card>
+</div>
+
+<div *ngIf="!(dbook)">
+    <h1>Sadly no books are available at this moment.</h1>
+    <mat-card>
+        Please add one or come back at a later time!
+    </mat-card>
+</div>
+
+
+

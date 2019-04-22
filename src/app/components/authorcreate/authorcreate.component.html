@@ -1,0 +1,47 @@
+<app-header></app-header>
+<mat-card>
+  <h2>Add a new Author to our listings</h2>
+  <p *ngIf="errorMessage" class="errMsg">{{errorMessage}}</p>
+  <p *ngIf="successMessage" class="successMsg">{{successMessage}}</p>
+
+
+  <mat-form-field>
+    <input [formControl]="nameFormControl" matInput name="name" [(ngModel)]="name" placeholder="Name" required>
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input [formControl]="bioFormControl" matInput name="bio" [(ngModel)]="bio" placeholder="bio"  required>
+    <mat-error *ngIf="bioFormControl.hasError('required')">
+        bio is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input [formControl]="countryFormControl" matInput name="country" [(ngModel)]="country" placeholder="country" required>
+    <mat-error *ngIf="countryFormControl.hasError('required')">
+      country is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="birthyearFormControl" matInput name="birthyear" [(ngModel)]="birthyear" placeholder="birthyear" required>
+    <mat-error *ngIf="birthyearFormControl.hasError('required')">
+      birthyear is <strong>required</strong>
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [formControl]="imgUriFormControl" matInput name="imgUri" [(ngModel)]="imgUri" placeholder="Image Uri">
+    <mat-error *ngIf="imgUriFormControl.hasError('pattern')">
+        Please enter a valid Image URI (example: 'http://example.com/i/img.png').
+      </mat-error>
+  </mat-form-field>
+
+  
+  <button mat-flat-button (click)="createAuthor()" color="primary">Create Author</button>
+</mat-card>
