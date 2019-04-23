@@ -8,12 +8,12 @@ https://owc-angular-jh.herokuapp.com/home
 
 ### Prerequisites
 
-You will require Node.js, mongodb and a running installation of https://github.com/void1337/CSIDE-API
+You will require Node.js, mongodb and a running installation of https://github.com/void1337/OpenWebCatalogue-Backend
 
 
 ### Installing
 
-1. Make sure you have https://github.com/void1337/CSIDE-API up and running.
+1. Make sure you have https://github.com/void1337/OpenWebCatalogue-Backend up and running.
 2. Download and extract this repository and open it in your favourite text editor.
 3. Run npm install
 4. Run npm audit fix
